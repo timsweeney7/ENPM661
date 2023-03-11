@@ -10,6 +10,14 @@ GREEN = (0, 255, 0)
 RED = (0, 0, 255)
 YELLOW = (9, 227, 212)
 
+# for node breakdown
+COST_TO_COME = 0
+PARENT_NODE = 1
+COORDINATES = 2
+# for coordinates
+X = 0
+Y = 1
+
 
 def DrawMap():
     # Background
@@ -64,16 +72,16 @@ def DrawMap():
     return map
 
 
-def determine_valid_point(x, y):
-    if not point_is_inside_map(x, y):
+def determine_valid_point(coordinates):
+    if not point_is_inside_map(coordinates[X], coordinates[Y]):
         return False
-    if point_is_inside_box1(x, y):
+    if point_is_inside_box1(coordinates[X], coordinates[Y]):
         return False
-    if point_is_inside_box2(x, y):
+    if point_is_inside_box2(coordinates[X], coordinates[Y]):
         return False
-    if point_is_inside_hexagon(x, y):
+    if point_is_inside_hexagon(coordinates[X], coordinates[Y]):
         return False
-    if point_is_inside_triangle(x, y):
+    if point_is_inside_triangle(coordinates[X], coordinates[Y]):
         return False
     else:
         return True
