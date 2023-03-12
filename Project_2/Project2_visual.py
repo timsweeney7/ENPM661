@@ -23,7 +23,7 @@ Y = 1
 def DrawMap():
     # Background
     background_color = [199, 198, 195]
-    map = np.zeros((250, 600, 3), np.uint8)
+    map = np.zeros((251, 601, 3), np.uint8)
     map[:] = background_color
 
     # box 1 boundry
@@ -191,8 +191,8 @@ def point_is_inside_triangle(x, y):
         return False
 
 
-def add_point(x, y, map):
-    map[y, x] = RED
+def add_point(x, y, map, color):
+    map[y, x] = color
     return map
 
 
