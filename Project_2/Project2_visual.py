@@ -19,6 +19,7 @@ X = 0
 Y = 1
 
 
+
 def DrawMap():
     # Background
     background_color = [199, 198, 195]
